@@ -1,0 +1,12 @@
+<div class="game-container">
+    <div class="game-grid">
+      <div *ngFor="let row of characters; let i = index" class="row">
+        <div *ngFor="let char of row; let j = index" 
+             class="cell" 
+             [ngClass]="{'letter': isLetter(char), 'symbol': !isLetter(char)}"
+             (click)="onCharacterClick(i, j)">
+          {{ char }}
+        </div>
+      </div>
+    </div>
+  </div>
